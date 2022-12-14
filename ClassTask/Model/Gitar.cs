@@ -8,11 +8,11 @@ namespace ClassTask.Model
 {
     public class Gitar:Instrument
     {
-        public string Type { get; set; } = null!;
-        public string Material { get; set; } = null!;
+        public string Tur { get; set; } = null!;
+        public string Klavye { get; set; } = null!;
         public override string Sound()
         {
-            return "Gitaranin sesi ";
+            return "Gitar sesi ";    
         }
 
     }

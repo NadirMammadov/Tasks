@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassTask.Model
 {
-    public class Sintezator : Instrument
+    public class Keman : Instrument
     {
-        public string Type { get; set; } = null!;
-        public int ButtonCount { get; set; }
-        public double Kq { get; set; }
+        public string Arse { get; set; } = null!;
         public override string Sound()
         {
-            return "Sintezator sesi ";    
+            return "Keman sesi";    
         }
     }
 }

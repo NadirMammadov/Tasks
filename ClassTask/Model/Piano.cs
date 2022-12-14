@@ -8,10 +8,13 @@ namespace ClassTask.Model
 {
     public class Piano :Instrument
     {
-        public int PedalCount { get; set; }
+        public string Klavye { get; set; } = null!;
+        public string? Fonksiyonlar { get; set; }
+        public bool KulaklikGirisi { get; set; }
+
         public override string Sound()
         {
-            return "Pianonun sesi";
+            return "Piano sesi";    
         }
     }
 }
