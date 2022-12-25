@@ -1,33 +1,31 @@
-﻿using ClassTask.Model;
-using System.Reflection;
-
-public class Program
+﻿
+string folderPath = "C:\\Users\\nadir\\Source\\Repos\\Tasks\\ClassTask\\AppData\\";
+Directory.CreateDirectory(folderPath);
+for (int i = 1; i <= 100; i++)
 {
-    public static void Main()
+    await File.WriteAllLinesAsync(folderPath + $"data{i}.txt", new string[]
     {
-        List<User> users = new List<User>();
-        User user = new User("nadir@gmail.com", "SAAs123213213");
-        user.Fullname = "Nadirmemm";
-        User user1 = new User("nadirem@gmail.com", "Aas123213213");
-        user1.Fullname = "MemmedovNadir";
-        if (user.PasswordChecker(user.Password))
-        {
-            users.Add(user);
-            
-            user.ShowInfo();
-        }
-        else
-        {
-            Console.WriteLine("Password duzgun deyl");
-        }
-        if (user1.PasswordChecker(user1.Password))
-        {
-            users.Add(user);
-            user1.ShowInfo();
-        }
-        else
-        {
-            Console.WriteLine("Password duzgun deyl");
-        }
-    }
+        $"{i+1}.Nadir",
+        "Memmedov",
+        "nadirmemmedov@gmail.com",
+        $"+994 ({i.ToString("D3")}) 8538060"
+    },Encoding.UTF8);
 }
+//string exampleFile1 = "testData1.txt";
+//foreach (var item in File.ReadAllLines(folderPath + "data1.txt").Select((x, y) => (x, y)))
+//{
+//    Console.WriteLine($"{item.y} {item.x}");
+//}
+
+//foreach (var item in collection)
+//{
+
+//}
+DirectoryInfo info = new DirectoryInfo(folderPath);
+FileInfo[] files = info.GetFiles("*.txt", SearchOption.AllDirectories);
+//foreach (var file in files)
+//{
+//    Console.WriteLine(file.Name);
+//    Console.WriteLine(file.FullName);
+//    Console.WriteLine(file.LastWriteTime);
+//}
