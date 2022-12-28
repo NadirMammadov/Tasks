@@ -7,18 +7,7 @@ public class Program
 {
     public static void Main()
     {
-        // User user = GetUserNumber();
-        //List<Task> tasks = new List<Task>();
-
-        //tasks.Add(StartTime());
-        //tasks.Add(GetMenu());
-        //tasks.Add(GetCommand());
-
-        //await Task.WhenAll(tasks);
-        User user = new User()
-        {
-            Provider = "Nar"
-        };
+        User user = GetUserNumber();
 
         List<string> enterNum = new();
         string message=null;
@@ -36,7 +25,13 @@ public class Program
 |                    |
 |   {GetDisplay()}                  |
 |                     |
-                ";
+---------------------                
+|  1  |  2  |  3  |
+|  4  |  5  |  6  |
+|  7  |  8  |  9  |
+|  #  |  0  |  *  |
+--------------------- 
+";
 
                     Console.WriteLine(logo);
                     Console.WriteLine(GetMenu());
