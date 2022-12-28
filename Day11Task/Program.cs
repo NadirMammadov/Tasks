@@ -3,5 +3,5 @@
 namespace Day11Task;
 public class Program
 {
-  
+   
 }

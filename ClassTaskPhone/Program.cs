@@ -1,46 +1,40 @@
 ﻿using ClassTaskPhone;
 using ClassTaskPhone.Models;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 
 public class Program
 {
-    public static async  Task Main()
+    public  static async Task Main()
     {
-        //Console.OutputEncoding = Encoding.UTF8;
-        //Phone myPhone = new Phone();
-        //Console.WriteLine("Nomrenizi daxil edin: ");
-        //myPhone.Number = Console.ReadLine();
-        //Console.WriteLine("Balansizini daxil edin: ");
-        //myPhone.Balance = double.Parse(Console.ReadLine());
-        //myPhone.Provider = ProviderName(myPhone.Number);
-        //List<Task> tasks = new List<Task>();
-        //tasks.Add(Time.StartTime());
-        //await Task.WhenAll(tasks);
-        var data = await Time.StartTime();
-        string logo = @$" ---------------------
-|                     |
-|                     |
-|                     |
-|                     | 
-|                     |
-|                     |
-|                     |
-        ";
-        
-       
-        while (true)
+        Console.OutputEncoding = Encoding.UTF8;
+        Phone myPhone = new Phone();
+        myPhone.Number = Console.ReadLine();
+        myPhone.Balance = double.Parse(Console.ReadLine());
+        myPhone.Provider = ProviderName(myPhone.Number);
+
+
+
+        List<Task> tasks = new List<Task>();
+        tasks.Add(Time.StartTime());
+        tasks.Add(CallNumber());
+        await Task.WhenAll(tasks);
+
+
+        async Task CallNumber()
         {
-            Console.WriteLine(logo);
-            await Task.Delay(1000);
-            Console.Clear();
+            List<int> numbers = new();
+            while (true)
+            {
+                
+                var dt = Console.ReadKey();
+                numbers.Add(dt.KeyChar);
+            }
         }
-
-
-
     }
-   
-   
+
+
     public static string ProviderName(string number)
     {
         if (number.IndexOf("+99470", 0, 6)==0 || number.IndexOf("070", 0, 3) == 0 || number.IndexOf("+99477", 0, 6) == 0 || number.IndexOf("077", 0, 3) == 0)
