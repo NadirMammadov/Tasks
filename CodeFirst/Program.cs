@@ -1,8 +1,7 @@
-﻿using CodeFirst.Models;
+using CodeFirst.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
-using System.Net.Http.Headers;
 
 public class Program
 {
@@ -10,7 +9,7 @@ public class Program
     public static void Main()
     {
 
-        SqlConnection sqlConnection = new SqlConnection("Server=MACHINE; Database=Northwind; Trusted_Connection=True; TrustServerCertificate=True");
+        SqlConnection sqlConnection = new SqlConnection("Server=CANR2-0; Database=Northwind; Trusted_Connection=True; TrustServerCertificate=True");
         sqlConnection.Open();
 
         #region SqlSorgulari
@@ -182,34 +181,37 @@ public class Program
         // Kategorilerine gore stoktaki urun sayi 
         /*
         var categories = from p in context.Products
-                       join c in context.Categories on p.CategoryId equals c.CategoryId
-                       group c by c.CategoryId into pg
-                       select new
-                       {
-                           pg.FirstOrDefault().CategoryId,
-                           pg.FirstOrDefault().CategoryName,
-                           ToplamUrunSayi = pg.Select(x => x.Products.Select(y => y.UnitsInStock))
-                       };
+                         group p by  new {p.Category.CategoryId ,p.Category.CategoryName } into pg
+                         select new
+                         {
+                             CategoryId = pg.Key.CategoryId,
+                             CategoryName = pg.Key.CategoryName,  
+                             Total = pg.Sum(x => x.UnitsInStock)
+                        };
+                       
                       
                        
         foreach (var category in categories)
         {
             Console.WriteLine($"CategoryId: {category.CategoryId}");
             Console.WriteLine($"CategoryName: {category.CategoryName}");
-            var cc = category.ToplamUrunSayi;
-            int count = 0;
-            foreach (var items in cc)
-            {
-                foreach (var item in items)
-                {
-                    count += Convert.ToInt32(item);
-                }
-            }
-            Console.WriteLine($"ToplamUrunSayi: {count}");
+            
+            Console.WriteLine($"Stock count : {category.Total}");
+
+            //var cc = category.ToplamUrunSayi;
+            //int count = 0;
+            ////foreach (var items in cc)
+            ////{
+            ////    foreach (var item in items)
+            ////    {
+            ////        count += Convert.ToInt32(item);
+            ////    }
+            ////}
+            //Console.WriteLine($"ToplamUrunSayi: {count}");
             Console.WriteLine(new String(' ', 50));
         }
+        
         */
-
         // Urunler Tablosuna urun ekleyin
         /*
         Product product = new Product();
@@ -220,11 +222,7 @@ public class Program
         var category = from c in context.Categories
                          where c.CategoryName == categoryName
                          select c.CategoryId;
-        int catId = 0;
-        foreach (var ca in category)
-        {
-            catId = ca;
-        }
+        int catId = category.FirstOrDefault();
         product.CategoryId =catId;
         context.Products.Add(product);
         context.SaveChanges();
@@ -235,6 +233,23 @@ public class Program
         #region Linq To Entity
         // Siparis Tablosundan MusteriSirketAdi, CalisanAdiSoyadi, SiparisId, SiparisTarihi, KargoSirketiAdi
 
+        /*
+        var orders = context.Orders
+                               .Include(x => x.Customer)
+                               .Include(x => x.Employee)
+                               .Include(x => x.ShipViaNavigation)
+                               .ToList();
+        foreach (var order in orders)
+        {
+            Console.WriteLine($"CompanyName: {order.Customer.CompanyName}");
+            Console.WriteLine($"Employee FirstName: {order.Employee.FirstName}");
+            Console.WriteLine($"Employee LastName: {order.Employee.LastName}");
+            Console.WriteLine($"OrderId: {order.OrderId}");
+            Console.WriteLine($"Order Date: {order.OrderDate}");
+            Console.WriteLine($"ShipName: {order.ShipName}");
+            Console.WriteLine(new String(' ',50));
+        }
+        */ 
 
         // Calisanlarin Adini, Soyadini, Dogum Tarihini ve yasini getiren sorgu
         /*
@@ -256,7 +271,7 @@ public class Program
         }             
         */
         // Musteriler tablosunda sirket adinda Restaurant gecen sirketleri listeleyin
-        /*
+       /*
         var customers = context.Customers
                             .Where(x => x.CompanyName.Contains("Restaurant"))
                             .Select(x => new
