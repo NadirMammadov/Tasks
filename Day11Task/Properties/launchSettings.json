@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Day11Task": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:64185;http://localhost:64186"
+    }
+  }
+}

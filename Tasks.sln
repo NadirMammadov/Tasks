@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassTaskPhoneSql", "ClassT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO.NETDataMasking", "ADO.NETDataMasking\ADO.NETDataMasking.csproj", "{96C6699D-ACEC-44CA-9693-DF0019906D0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{CB2C8C1F-6079-45A3-9624-F04AF6B46425}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{CB2C8C1F-6079-45A3-9624-F04AF6B46425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarmaTask", "KarmaTask\KarmaTask.csproj", "{6765462A-B641-4141-824B-27D058A6640A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{CB2C8C1F-6079-45A3-9624-F04AF6B46425}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB2C8C1F-6079-45A3-9624-F04AF6B46425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB2C8C1F-6079-45A3-9624-F04AF6B46425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6765462A-B641-4141-824B-27D058A6640A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6765462A-B641-4141-824B-27D058A6640A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6765462A-B641-4141-824B-27D058A6640A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6765462A-B641-4141-824B-27D058A6640A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
