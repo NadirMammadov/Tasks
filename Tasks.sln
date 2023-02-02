@@ -33,7 +33,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO.NETDataMasking", "ADO.N
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{CB2C8C1F-6079-45A3-9624-F04AF6B46425}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarmaTask", "KarmaTask\KarmaTask.csproj", "{6765462A-B641-4141-824B-27D058A6640A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KarmaTask", "KarmaTask\KarmaTask.csproj", "{6765462A-B641-4141-824B-27D058A6640A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRChatTask", "SignalRChatTask\SignalRChatTask.csproj", "{D781A234-9356-4348-8814-FB8495F3D519}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQProject", "RabbitMQProject\RabbitMQProject.csproj", "{6F2F86B8-908A-449F-9D17-ECA552B39858}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQProject-master", "RabbitMQProject-master", "{D37F7164-E1B4-4151-A952-0CE4568F8510}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQDemo", "RabbitMQDemo\RabbitMQDemo.csproj", "{90CCD8A2-6E2C-4F48-AB94-A0B4259B2FCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,9 +113,25 @@ Global
 		{6765462A-B641-4141-824B-27D058A6640A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6765462A-B641-4141-824B-27D058A6640A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6765462A-B641-4141-824B-27D058A6640A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D781A234-9356-4348-8814-FB8495F3D519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D781A234-9356-4348-8814-FB8495F3D519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D781A234-9356-4348-8814-FB8495F3D519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D781A234-9356-4348-8814-FB8495F3D519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F2F86B8-908A-449F-9D17-ECA552B39858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F2F86B8-908A-449F-9D17-ECA552B39858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F2F86B8-908A-449F-9D17-ECA552B39858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F2F86B8-908A-449F-9D17-ECA552B39858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90CCD8A2-6E2C-4F48-AB94-A0B4259B2FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90CCD8A2-6E2C-4F48-AB94-A0B4259B2FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90CCD8A2-6E2C-4F48-AB94-A0B4259B2FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90CCD8A2-6E2C-4F48-AB94-A0B4259B2FCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F2F86B8-908A-449F-9D17-ECA552B39858} = {D37F7164-E1B4-4151-A952-0CE4568F8510}
+		{90CCD8A2-6E2C-4F48-AB94-A0B4259B2FCE} = {D37F7164-E1B4-4151-A952-0CE4568F8510}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {896D18B8-E1E7-41EE-902B-E22484F95921}
